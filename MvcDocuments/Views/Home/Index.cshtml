@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<a href="https://www.codeproject.com/Articles/755459/ASP-NET-MVC-Documents-Sample">Document Tutorial 1</a>
+<a href="https://www.codeproject.com/Articles/767635/ASP-NET-MVC-Documents-sample-Part">Document Tutorial 2</a>
+
+<p>
+    This article is not going to talk about the MVC Model itself or how the Controllers work and so on because a lot is written about that already in other articles. The main goal I have with this article is to show someone who starts with programming to go from nothing to a fully working Web Application with Dynamic data. With Dynamic data I mean that no static lists will be in the HTML code, all data in the lists will come from the database and can be changed if needed.
+
+    When this sample is finished it's far from ready because I didn't pay attention to the validation of the data a user enters and so on so it' a rough working model that's ready for the next phase.
+
+    That next phase will be changing the look and feel and adding functionality. At the moment I am writing the next addition to the article that I will publish as a separate article that builds further on the code. At the end it will be similar to the version I use myself at home to keep track of the incoming standard mail that is scanned by a standard document scanner and is uploaded to this webite. The Document_uri string in the Document.cs Class in this article is used to link the scanned document and wen clicked present that .PDF in the browser. The end result will be a handy application were documents otherwise is maps are quickly found when needed.
+</p>
+
+<p>
+    There will be a lot of document and company records in the database after using the application for a while and we don't want them all on one page displayed so we have to add Paging. It's also handy that we can search for a specific company instead of going true all the companies by hand to find the company we are looking for so we have to add Search functionality to the application. When we enter a new Company to our database and we go back to the list we don't get the companies in alphabetical order so we have to write some code to make it Sort on alphabetical order.Then there is also the fact that we don't want anyone to see our documents so we have to make sure that only those who are logged in can view them. We have to build that in also. And we want to upload the scans we make from the real documents that we get in our mail and make them available as .PDF in our application. So we need to create an upload for that and create a link to view these documents in the browser.
+</p>
+

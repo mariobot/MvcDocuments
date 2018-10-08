@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MvcDocuments.Models.Function>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Function_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Function_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FunctionId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FunctionId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FunctionId })
+        </td>
+    </tr>
+}
+
+</table>

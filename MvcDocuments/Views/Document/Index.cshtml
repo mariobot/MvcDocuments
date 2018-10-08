@@ -1,0 +1,130 @@
+﻿@model PagedList.IPagedList<MvcDocuments.Models.Document>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create") @Html.ActionLink("Upload Document", "DocumentUpload")
+</p>
+@using (Html.BeginForm())
+{
+    <p>
+        Find Relation: @Html.TextBox("SearchString")
+        <input type="submit" value="Find" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            Company_name
+        </th>
+        <th>
+            Cost_group_name
+        </th>
+        <th>
+            Mail_category_name
+        </th>
+        <th>
+            Payment_status_name
+        </th>
+        <th>
+            Document_date
+        </th>
+        <th>
+            Reference
+        </th>
+        <th>
+            Note
+        </th>
+        <th>
+            AmoutExVat
+        </th>
+        <th>
+            Vat
+        </th>
+        <th>
+            Amount
+        </th>
+        <th>
+            Document_uri
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company.Company_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Costs_group.Cost_group_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mail_category.Mail_category_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Payment_status.Payment_status_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Document_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reference)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmoutExVat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Document_uri)
+                <a href="~/Assets/Documents/@Html.DisplayFor(model => item.Document_uri)" target="_blank">View Document</a>
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.DocumentId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.DocumentId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.DocumentId })
+            </td>
+        </tr>
+    }
+</table>
+<div>
+
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)of @Model.PageCount
+    @if (Model.HasPreviousPage)
+    {
+        @Html.ActionLink("<<", "Index", new { page = 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+        @Html.Raw(" ");
+        @Html.ActionLink("< Prev", "Index", new { page = Model.PageNumber - 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+    }
+    else
+    {
+        @:<<
+        @Html.Raw(" ");
+        @:< Prev
+    }
+    @if (Model.HasNextPage)
+    {
+        @Html.ActionLink("Next >", "Index", new { page = Model.PageNumber + 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+        @Html.Raw(" ");
+        @Html.ActionLink(">>", "Index", new { page = Model.PageCount, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+    }
+    else
+    {
+        @:Next >
+        @Html.Raw(" ")
+        @:>>
+    }
+
+</div>

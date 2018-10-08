@@ -1,0 +1,26 @@
+﻿@model MvcDocuments.Models.Mail_category
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Mail_category</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Mail_category_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mail_category_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Mail_categoryId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

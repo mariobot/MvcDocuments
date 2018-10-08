@@ -1,0 +1,112 @@
+﻿@model MvcDocuments.Models.Document
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Document</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Company.Company_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company.Company_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Costs_group.Cost_group_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Costs_group.Cost_group_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mail_category.Mail_category_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mail_category.Mail_category_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Payment_status.Payment_status_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Payment_status.Payment_status_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Document_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Document_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reference)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reference)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AmoutExVat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AmoutExVat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Document_uri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Document_uri)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

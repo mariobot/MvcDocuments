@@ -1,0 +1,26 @@
+﻿@model MvcDocuments.Models.Function
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Function</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Function_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Function_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FunctionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MvcDocuments.Models.Costs_group>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost_group_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cost_group_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Costs_groupId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Costs_groupId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Costs_groupId })
+        </td>
+    </tr>
+}
+
+</table>

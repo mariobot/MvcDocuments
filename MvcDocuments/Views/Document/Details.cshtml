@@ -1,0 +1,106 @@
+﻿@model MvcDocuments.Models.Document
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Document</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Company.Company_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company.Company_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Costs_group.Cost_group_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Costs_group.Cost_group_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mail_category.Mail_category_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mail_category.Mail_category_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Payment_status.Payment_status_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Payment_status.Payment_status_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Document_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Document_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reference)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reference)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AmoutExVat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AmoutExVat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Document_uri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Document_uri)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DocumentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

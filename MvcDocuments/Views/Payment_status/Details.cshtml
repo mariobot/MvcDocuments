@@ -1,0 +1,26 @@
+﻿@model MvcDocuments.Models.Payment_status
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Payment_status</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Payment_status_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Payment_status_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Payment_statusId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

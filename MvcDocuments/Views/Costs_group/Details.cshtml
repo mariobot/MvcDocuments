@@ -1,0 +1,26 @@
+﻿@model MvcDocuments.Models.Costs_group
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Costs_group</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost_group_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost_group_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Costs_groupId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
